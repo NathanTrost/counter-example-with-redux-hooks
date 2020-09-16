@@ -1,10 +1,12 @@
 import React from "react";
-import Counter from "./components/Counter";
+import CounterWithHooks from "./components/Counter";
+import SetTimeWithLegacyRedux from "./components/SetTimeWithLegacyRedux";
 
 function App() {
   return (
     <div className="App" style={{ margin: "30px" }}>
-      <Counter />
+      <CounterWithHooks />
+      <SetTimeWithLegacyRedux />
     </div>
   );
 }

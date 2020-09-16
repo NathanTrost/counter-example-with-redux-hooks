@@ -7,7 +7,7 @@ import {
   zeroCounter,
 } from "../actions/counterActions";
 
-const Counter = () => {
+const CounterWithHooks = () => {
   const count = useSelector((state) => state.counter);
   const dispatch = useDispatch();
 
@@ -17,6 +17,7 @@ const Counter = () => {
 
   return (
     <>
+      <h2>Counter with Hooks</h2>
       <h3>{count}</h3>
       <button onClick={onAddClick}>Increment count</button>{" "}
       <button onClick={onDecreaseClick}>Decrement counter</button>{" "}
@@ -25,4 +26,4 @@ const Counter = () => {
   );
 };
 
-export default Counter;
+export default CounterWithHooks;
