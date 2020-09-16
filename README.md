@@ -1,68 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I lean towards the view that Redux is overkill on a great many things, especially since React has eleviated it's need by introducing [Context](https://reactjs.org/docs/context.html) and hooks, especially [useReducer](https://reactjs.org/docs/hooks-reference.html#usereducer). However there are applications that require the benefits of Redux. For those like me who touch Redux on the rare occasion, this is a simple example implementing Redux's [useSelector and useDispatch hooks](https://react-redux.js.org/api/hooks), and it includes the structure you might want for a larger project.
 
-## Available Scripts
+[Redux](https://github.com/reactjs/redux)
 
-In the project directory, you can run:
+To run this example:
 
-### `yarn start`
+1. [Download this repo](https://github.com/NathanTrost/counter-example-with-redux-hooks) or `git clone https://github.com/NathanTrost/counter-example-with-redux-hooks`
+2. From the root folder run:  
+   `npm install`
+3. `npm start`
+4. Play around with it a bit.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This example was created using `https://reactjs.org/docs/create-a-new-react-app.html#create-react-app`
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The files created and modified for this project are:
 
-### `yarn test`
+- src/index.js: Modified to with `Provider` and `store` wrapping our component
+- store.js: Setup store
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- actions/actionTypes.js: Definitions for all various actions
+- actions/counterActions.js: Action Creators for counter
 
-### `yarn build`
+- reducers/rootReducer.js: Bundle all reducers with `combineReducer`
+- reducers/initialState.js: Non functional object of initial state values
+- reducers/counter.js: State specific reducer for counter that returns new state based off the action called
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- components/Counter.js: Finally the component in which we'll recieve state from `useSelector` and update it by using `useDispatch`

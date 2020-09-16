@@ -1,0 +1,5 @@
+export const counterActions = {
+  DECREMENT_COUNT: "DECREMENT_COUNT",
+  INCREMENT_COUNT: "INCREMENT_COUNT",
+  ZERO_COUNT: "ZERO_COUNT",
+};
