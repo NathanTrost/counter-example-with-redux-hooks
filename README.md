@@ -14,14 +14,19 @@ This example was created using `https://reactjs.org/docs/create-a-new-react-app.
 
 The files created and modified for this project are:
 
-- src/index.js: Modified to with `Provider` and `store` wrapping our component
-- store.js: Setup store
+- General Files
+   - src/index.js: Modified to with `Provider` and `store` wrapping our component
+   - store.js: Setup store
+   - actions/actionTypes.js: Definitions for all various actions
+   - reducers/rootReducer.js: Bundle all reducers with `combineReducer`
+   - reducers/initialState.js: Non functional object of initial state values
 
-- actions/actionTypes.js: Definitions for all various actions
-- actions/counterActions.js: Action Creators for counter
+- Counter Example with Hooks
+   - actions/counterActions.js: Action Creators
+   - reducers/counter.js: State specific reducer that returns new state based off the action called
+   - components/Counter.js: Finally the component in which we'll recieve state from `useSelector` and update it by using `useDispatch`
 
-- reducers/rootReducer.js: Bundle all reducers with `combineReducer`
-- reducers/initialState.js: Non functional object of initial state values
-- reducers/counter.js: State specific reducer for counter that returns new state based off the action called
-
-- components/Counter.js: Finally the component in which we'll recieve state from `useSelector` and update it by using `useDispatch`
+- Date Change Example without Hooks
+   - actions/dateTimeActions.js: Action Creators
+   - reducers/setDateTime.js: State specific reducer that returns new state based off the action called
+   - components/SetTimeWithLegacyRedux.js: Finally the component in which we'll recieve state using `connect`, `mapStateToProps` and `mapDispatchToProps`
