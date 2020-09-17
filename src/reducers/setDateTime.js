@@ -12,7 +12,6 @@ const {
 } = dateTimeActions;
 
 const setDateTime = (dateTime = initialState.dateTime, action) => {
-  console.log(dateTime);
   switch (action.type) {
     case DECREMENT_DAY:
       return new Date(
